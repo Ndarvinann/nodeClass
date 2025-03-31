@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Register Sales Agent</title>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register Sales Agent</h2>
+    <form id="salesAgentForm">
+      <div class="form-group">
+        <label for="agentName">Agent Name:</label>
+        <input type="text" id="agentName" name="agentName" placeholder="Enter agent name">
+        <small class="error-message" id="agentNameError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+          <option value="">Select branch</option>
+          <option value="Maganjo">Maganjo</option>
+          <option value="Matugga">Matugga</option>
+        </select>
+        <small class="error-message" id="branchError"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter phone number">
+        <small class="error-message" id="contactError"></small>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>

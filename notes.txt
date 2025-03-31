@@ -1,0 +1,9 @@
+1. when starting a new project(helloNode for this casse)
+2. initialize the npm. (terminal + npm init)
+3. create a .gitignore file( this is where passwords/secrets and things you dont want to push to github).
+4. install packages 
+start with npm install express. (check the package.json to confirm that the dependencies have been updated)
+Then nodemon(npm i nodemon.) check the scripts inthe json package and add a 'start' script with 'nodemond server.js'
+Then install PUG
+5. The MVP structure. open folders for your models, views, public. this works for bootstrap as well.
+6. Linters and formatters would come in at this point. 
