@@ -1,0 +1,29 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Register Produce
+  link(rel='stylesheet' href='/css/style.css')
+.form-container
+  .heading
+    h2 Karibu Groceries Limited 
+  h3 Register Produce
+  form(action='/addProduct' method = 'post')
+    .form-group
+      label(for='produceName') Produce Name:
+      input#produceName(type='text' name='produceName' placeholder='Enter produce name')
+      small#produceNameError.error-message
+    .form-group
+      label(for='produceType') Produce Type:
+      input#produceType(type='text' name='produceType' placeholder='Enter produce type')
+      small#produceTypeError.error-message
+    .form-group
+      label(for='tonnage') Tonnage (kg):
+      input#tonnage(type='number' name='tonnage' placeholder='Enter tonnage')
+      small#tonnageError.error-message
+    .form-group
+      label(for='cost') Cost (UgX):
+      input#cost(type='number' name='cost' placeholder='Enter cost')
+      small#costError.error-message
+    button(type='submit') Register
+script(src='produce.js')

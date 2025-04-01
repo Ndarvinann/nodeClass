@@ -1,9 +1,68 @@
+PUG => high template engine for Node that reads the HTML boilerplate and improves readability. its the HTML of backend.
+
 1. when starting a new project(helloNode for this casse)
+
 2. initialize the npm. (terminal + npm init)
+
 3. create a .gitignore file( this is where passwords/secrets and things you dont want to push to github).
+
 4. install packages 
 start with npm install express. (check the package.json to confirm that the dependencies have been updated)
 Then nodemon(npm i nodemon.) check the scripts inthe json package and add a 'start' script with 'nodemond server.js'
 Then install PUG
+
 5. The MVP structure. open folders for your models, views, public. this works for bootstrap as well.
+
 6. Linters and formatters would come in at this point. 
+
+ 7. To your server file, you need : dependencies
+ so const app express and all her friends. 
+
+ 8. instatiations-- put the port number.
+
+ 9. configurations => set the view to pug(app.set('view engine', 'pug'))
+
+ 10. convert your html files(if you aleady have them) into pug. (html-to-pug.com), and create a .pug file in your views folder.
+
+ 11. create a routing file.js (with the same name as your file) in your routers folder. res.render(instead of res.send) is used as we are not working with HTML files. chose a file from your views file, without the .pug
+
+ 12. the syntax for the post route, router.post("/addProduct", (req,res)=>{console.log(req.res)}); uses console.log because we want to log all the information thats been collected from the contact form body(req.body) instead of the one by one field. dont forget the module.export, to expose your routes for use by other files. 
+
+ 13. go to your form and make sure the css is linked properly, that the form group you are trying to get/post has a name attribute as this determines how it is accessed in Express(req.body)
+ 
+ 14. and that the app.use(express.urlencoded({ extended: true })); middleware,essential for processing form submissions in Express.js., is above the routes part of your server file.
+
+15. we havent connected to a DB yet, so check the server with your route, and then check your terminal for posting.
+
+
+                                                  <--end of day one-->
+
+
+ keep concerns together. lets all product routes be in one file and the sales routes in their own file(common sense right?)
+
+1. notice that the routes in the pug file, where the form is, are getting longer. everyfile we have concerning the form should appear on the form action. the "/" in your serverfile will be neglected. 
+
+2. A full route path is one that has its description page(routers folder) and the app.use in the server file. 
+
+3. Re-directing, telling the submit button where to go. here we are using it to return a fresh/empty sheet for new db info collection.
+
+                                                       <--MONGODB-->
+Schema is  Json Object that defines the structure and contents of the data. in mongo, it defines the shape of the documents within that collection. 
+
+Collection- grping of mongo docs. its the equivalent of a table. so 'name' and 'product' is its own doc. a grp of these is a collection.
+
+1. install the environment(npm i dotenv), and config your serverfile(require('dotenv').config();) in dependencies.
+
+2. create a .env in helloNode and DATABASE = mongodb://localhost:27017/hellonode.
+
+3. Shd the need to use mongoatlas arise, use mongodb+srv// 
+
+4. The .env file should stay in the .gitignore file. it DOESNT leave your pc.
+
+5. now install Mongoose and require it in your serverfile(const, require).
+
+6.Then configure it to connect to your .env file(look at the config section)
+
+7. Test the connection(still in the config section of the server.), using your monongodb compass.
+
+                                   <--using the db-->
