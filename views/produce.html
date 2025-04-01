@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register Produce</title>
-  <link rel="stylesheet" href="/public/css/style.css">
-</head>
-<body>
-  <div class="form-container">
-    <div class="heading">
-      <h2>Karibu Groceries Limited </h2>
-  </div>
-    <h3>Register Produce</h3>
-    <form id="produceForm">
-      <div class="form-group">
-        <label for="produceName">Produce Name:</label>
-        <input type="text" id="produceName" name="produceName" placeholder="Enter produce name">
-        <small class="error-message" id="produceNameError"></small>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Produce</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="heading">
+        <h2>Karibu Groceries Limited</h2>
       </div>
+      <h3>Register Produce</h3>
+      <form id="produceForm">
+        <div class="form-group">
+          <label for="produceName">Produce Name:</label>
+          <input
+            type="text"
+            id="produceName"
+            name="produceName"
+            placeholder="Enter produce name"
+          />
+          <small class="error-message" id="produceNameError"></small>
+        </div>
 
-      <div class="form-group">
-        <label for="produceType">Produce Type:</label>
-        <input type="text" id="produceType" name="produceType" placeholder="Enter produce type">
-        <small class="error-message" id="produceTypeError"></small>
-      </div>
+        <div class="form-group">
+          <label for="produceType">Produce Type:</label>
+          <input
+            type="text"
+            id="produceType"
+            name="produceType"
+            placeholder="Enter produce type"
+          />
+          <small class="error-message" id="produceTypeError"></small>
+        </div>
 
-      <div class="form-group">
-        <label for="tonnage">Tonnage (kg):</label>
-        <input type="number" id="tonnage" name="tonnage" placeholder="Enter tonnage">
-        <small class="error-message" id="tonnageError"></small>
-      </div>
+        <div class="form-group">
+          <label for="tonnage">Tonnage (kg):</label>
+          <input
+            type="number"
+            id="tonnage"
+            name="tonnage"
+            placeholder="Enter tonnage"
+          />
+          <small class="error-message" id="tonnageError"></small>
+        </div>
 
-      <div class="form-group">
-        <label for="cost">Cost (UgX):</label>
-        <input type="number" id="cost" name="cost" placeholder="Enter cost">
-        <small class="error-message" id="costError"></small>
-      </div>
+        <div class="form-group">
+          <label for="cost">Cost (UgX):</label>
+          <input type="number" id="cost" name="cost" placeholder="Enter cost" />
+          <small class="error-message" id="costError"></small>
+        </div>
 
-      <button type="submit">Register</button>
-    </form>
-  </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
 
-  <script src="produce.js"></script>
-</body>
+    <script src="produce.js"></script>
+  </body>
 </html>

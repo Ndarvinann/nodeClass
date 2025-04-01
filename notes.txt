@@ -66,3 +66,12 @@ Collection- grping of mongo docs. its the equivalent of a table. so 'name' and '
 7. Test the connection(still in the config section of the server.), using your monongodb compass.
 
                                    <--using the db-->
+at what point do i tell you that i enjoyed working with schemas that i didnt log these steps?. 
+Let the order of the validations in your schemas be as the ones in your pug form. fr working purposes. dont froget to export.
+
+mongodb usually uses email + password as isgnup authetification, since we are stepping away from the default, we need to download local passport for authentication. require it at the top, and specify the plug-in at the bottom.
+
+you cant have data posted to the db at login. its just for matching already existing info and allowing to get. 
+
+The name used in the pug file should match whatever you have in your schema file.
+

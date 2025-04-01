@@ -6,11 +6,23 @@ head
   title Register Sales Agent
 .form-container
   h2 Register Sales Agent
-  form(action = '/signAgent', method = 'post')
+  form(action = '/signup', method = 'post')
     .form-group
-      label(for='agentName') Agent Name:
-      input#agentName(type='text' name='agentName' placeholder='Enter agent name')
-      small#agentNameError.error-message
+      label(for='firstName')  First Name:
+      input#agentName(type='text' name='firstName' placeholder='Enter agent first name')
+      small#firstNameError.error-message
+      .form-group
+      label(for='lastName') Last Name:
+      input#agentName(type='text' name='lastName' placeholder='Enter agent last name')
+      small#lastNameError.error-message
+      .form-group
+      label(for='Role') Role:
+      select#role(name='role')
+        option(value='') Select role 
+        option(value='admin') Admin
+        option(value='sales') Sales Agent
+        option(value='director') Director
+      small#branchError.error-message
     .form-group
       label(for='branch') Branch:
       select#branch(name='branch')
@@ -18,9 +30,13 @@ head
         option(value='Maganjo') Maganjo
         option(value='Matugga') Matugga
       small#branchError.error-message
+      .form-group
+      label(for='email') Agent Email:
+      input#agentEmail(type='text' name='email' placeholder='Enter agent Email')
+      small#agentEmailError.error-message
     .form-group
       label(for='contact') Contact:
       input#contact(type='text' name='contact' placeholder='Enter phone number')
       small#contactError.error-message
     button(type='submit') Register
-script(src='signup.js')
+script(src='/public/js/signup.js')
