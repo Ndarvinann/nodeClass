@@ -10,7 +10,7 @@ const expressSession = require("express-session")({
 });
 //import user's model
 const Signup = require('./models/agentSignup')
-
+const productReg = require('./models/productSignup')
 require("dotenv").config();
 
 //2.instatiations--variables
@@ -24,6 +24,7 @@ const productRoutes = require("./routes/productRoutes");
 const authRoutes = require("./routes/authRoutes");
 const salesAgentRoutes = require("./routes/salesAgentRoutes");
 const directorRoute = require("./routes/directorRoute");
+
 const { truncate } = require("fs/promises");
 
 //3. configurations
@@ -48,6 +49,7 @@ app.use(express.urlencoded({ extended: true }));//essential for processing form 
 passport.use(Signup.createStrategy());
 passport.serializeUser(Signup.serializeUser()); // a user is assigned a serial number to user sessions. cookies. 
 passport.deserializeUser(Signup.deserializeUser());
+//passport.use(productReg.createStrategy());
 
 //express session configs
 app.use(expressSession);
