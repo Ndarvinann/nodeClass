@@ -75,3 +75,27 @@ you cant have data posted to the db at login. its just for matching already exis
 
 The name used in the pug file should match whatever you have in your schema file.
 
+
+
+  AUTHENTICATION / AUTHORIZATION
+users can be authenticated but could not be allowed to view. its called authentication.
+ 
+ install passport and express session.
+ passport helps autenycate users 
+ express session helps us assign sessions (login time to logOut time.)
+ go and require passport and session in the server file. Then go to the middleware and add the passport and express configurations. 
+ 
+ 
+ const Signup = require('../models/agentSignup') is special from the models folder, and is adde to the server file. below the expresssession. 
+
+ Remove the password from your schema, we dont want the passoword showing in db for security. 
+
+ Rule of thumb:
+
+Basic middleware (body parsers, cookies) →
+
+Session →
+
+Passport →
+
+Routes.

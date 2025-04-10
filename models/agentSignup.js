@@ -16,6 +16,7 @@ const signupSchema = new mongoose.Schema({
         type: String,
         trim : true,
         required: true,
+        enum : ['director', 'sales']
     },
  email :{
     type: String,
