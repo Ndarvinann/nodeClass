@@ -54,8 +54,14 @@ router.post("/updateProduct" , async(req,res)=>{
     res.status(400).send('unable to change item in the database')
     
   }
-
 });
-
-
+router.post("/deleteProduct", async (req,res) => {
+  try {
+    console.log("Attempting to delete:", req.body.id); // Debug log
+    await Product.deleteOne({ _id: req.body.id});
+    res.redirect("back")
+  } catch (error) {
+    res.status(400).send("unable to delete product from the db.") 
+  }
+});
   module.exports = router;

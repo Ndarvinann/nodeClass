@@ -12,6 +12,8 @@ head
       th Cost (ugx)
       th Date 
       th Update
+      th Delete
+
       tbody
        if products.length
         each item in products
@@ -22,5 +24,10 @@ head
             td #{item.cost}
             td #{moment(item.date).format("DD-MM-YYYY")}
             td 
-              a.btn.btn-primary.btn-block(href="/updateProduct/"+ item._id) Update
+              a(href="/updateProduct/"+ item._id) Update
+            td 
+               form(action = "/deleteProduct" method = "post") 
+                input(type="hidden" name = "id" value = item._id)
+                button.btn.btn-danger.btn-block(type="submit") Delete
+                
 
