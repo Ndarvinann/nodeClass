@@ -1,0 +1,26 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title sales
+.container
+  table
+    thead
+      th Produce 
+      th produce type
+      th Tonnage(KG)
+      th Cost (ugx)
+      th Date 
+      th Update
+      tbody
+       if products.length
+        each item in products
+          tr
+            td #{item.produceName}
+            td #{item.produceType}
+            td #{item.tonnage}
+            td #{item.cost}
+            td #{moment(item.date).format("DD-MM-YYYY")}
+            td 
+              a.btn.btn-primary.btn-block(href="/updateProduct/"+ item._id) Update
+

@@ -21,7 +21,6 @@ const productShema = new mongoose.Schema({
     type: Number,
     trim:true,
     required: true,
-    unique: true,
  },
 });
 module.exports = mongoose.model('product', productShema); //the const.
