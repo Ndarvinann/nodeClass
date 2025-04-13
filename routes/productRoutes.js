@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const connectEnsureLogin = require('connect-ensure-login'); //for permissions to perform certain actions.
 
 //the routing part
 const Product = require("../models/productSignup")
@@ -52,10 +53,10 @@ router.post("/updateProduct" , async(req,res)=>{
     
   } catch (error) {
     res.status(400).send('unable to change item in the database')
-    
   }
 });
-router.post("/deleteProduct", async (req,res) => {
+
+router.post("/deleteProduct", connectEnsureLogin.ensureLoggedIn() , async (req,res) => {
   try {
     console.log("Attempting to delete:", req.body.id); // Debug log
     await Product.deleteOne({ _id: req.body.id});
@@ -65,3 +66,5 @@ router.post("/deleteProduct", async (req,res) => {
   }
 });
   module.exports = router;
+
+  //connectEnsureLogin flag takes unlogged in users back to login so that they can allow them to do the action required. 
